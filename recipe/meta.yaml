@@ -19,7 +19,7 @@ requirements:
   build:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
-    - {{ stdlib('c')}}
+    - {{ stdlib('c') }}
     - make
   host:
   run:
