@@ -14,5 +14,14 @@ fi
 
 FFLAGS+=" -fd-lines-as-comments "
 
+echo "FC: ${GFORTRAN}"
+echo "CC: ${CC}"
+echo "AR: ${AR}"
+echo "RANLIB: ${RANLIB}"
+echo "CFLAGS: ${CFLAGS}"
+echo "FFLAGS: ${FFLAGS}"
+echo "LFLAGS: ${LFLAGS}"
+echo "PREFIX: ${PREFIX}"
+
 make FC=${GFORTRAN} CC=${CC} AR=${AR} RANLIB=${RANLIB} CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}" 
 make FC=${GFORTRAN} CC=${CC} AR=${AR} RANLIB=${RANLIB} PREFIX=${PREFIX} install-all CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
