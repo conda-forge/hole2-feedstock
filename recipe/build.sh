@@ -13,6 +13,16 @@ if [[ "$target_platform" == osx-* ]]; then
 fi
 
 FFLAGS+=" -fd-lines-as-comments "
+PREFIX=${BUILD_PREFIX}
 
-make FC=${GFORTRAN} CC=${CC} CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
-make FC=${GFORTRAN} CC=${CC} PREFIX=${PREFIX} install-all CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
+echo "FC: ${GFORTRAN}"
+echo "CC: ${CC}"
+echo "AR: ${AR}"
+echo "RANLIB: ${RANLIB}"
+echo "CFLAGS: ${CFLAGS}"
+echo "FFLAGS: ${FFLAGS}"
+echo "LFLAGS: ${LFLAGS}"
+echo "PREFIX: ${PREFIX}"
+
+make FC=${GFORTRAN} CC=${CC} AR=${AR} RANLIB=${RANLIB} PREFIX="${PREFIX}" CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}" 
+make FC=${GFORTRAN} CC=${CC} AR=${AR} RANLIB=${RANLIB} PREFIX="${PREFIX}" install-all CFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
